@@ -1,0 +1,9 @@
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+@import 'reset';
+@import 'comps/topbar';
+body{
+    font-size: 16px;
+}
+

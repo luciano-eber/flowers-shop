@@ -1,0 +1,18 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    overflow-x: hidden;
+}
+.container, .container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+ul,li{
+    list-style: none;
+    margin: 0;
+}

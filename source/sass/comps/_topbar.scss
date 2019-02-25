@@ -1,0 +1,55 @@
+@import '../mixins';
+
+$topbarH: 40px;
+.top--bar-mobile{
+    z-index: 999;
+    height: $topbarH;
+    *{
+        color: black;
+    }
+}
+.bar-mobile--open-menu,.bar-mobile--basket{
+    font-size: 150%;
+}
+.bar-mobile--title{
+    font-weight: 100;
+    @media(min-width: map-get($grid-breakpoints, sm)){
+        font-size: 150%;
+    }
+}
+.bar-mobile--basket{
+    position: relative;
+    height: 100%;
+    color: $gray-600;
+    &:after{
+        @include pseudoBlock;
+        height: 100%;
+        width: 1px;
+        background: $gray-300;
+        top: 0;
+        left: -20px;
+    }
+}
+.top--user-menu-mobile{
+    position: relative;
+    top: $topbarH;
+    color: $gray-300;
+    .user-menu--item{
+        color: $gray-600;
+    }
+    .user-menu--search-input::placeholder{
+        color: $gray-400;
+        padding-left: 2rem;
+    }
+}
+.user-menu--search{
+    position: relative;
+}
+.user-menu--search-btn{
+    background: none;
+    position: absolute;
+    top: -5px;
+    color: $gray-600;
+    left:0;
+    font-size: 130%;
+}

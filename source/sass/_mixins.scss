@@ -1,0 +1,18 @@
+@mixin flex($alignItems: false, $justifyContent: false, $flexFlow: false){
+    display: flex;
+    @if $alignItems{ align-items: $alignItems };
+    @if $justifyContent{ justify-content: $justifyContent };
+    @if $flexFlow{ flex-flow: $flexFlow };
+}
+@mixin inlineFlex($alignItems: false, $justifyContent: false, $flexFlow: false){
+    display: inline-flex;
+    @if $alignItems{ align-items: $alignItems };
+    @if $justifyContent{ justify-content: $justifyContent };
+    @if $flexFlow{ flex-flow: $flexFlow };
+}
+@mixin pseudoBlock($position: false, $display: false){
+    content: '';
+    @if $position{ position: $position } @else{ position: absolute; }
+    @if $display{ display: $display } @else{ display: block; }
+}
+@mixin maxHeight(){ height: 100% };
