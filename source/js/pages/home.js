@@ -8,3 +8,10 @@ effects.searchHoverDesktop({
     fadeInClass: 'search-bar-slide-in',
     fadeOutClass: 'search-bar-slide-out'
 });
+
+effects.mainMenuDropdown({
+    triggers: '.main-menu--dropdown-trigger',
+    targets: '.main-menu--dropdown-wrap',
+    slideInClass: 'main-menu-dropdown-slide-in',
+    slideOutClass: 'main-menu-dropdown-slide-out'
+})
