@@ -16,3 +16,9 @@
     @if $display{ display: $display } @else{ display: block; }
 }
 @mixin maxHeight(){ height: 100% };
+@mixin hoverText($color: false, $transition: false){
+    &:hover{
+        @if $color{ color: $color };
+        @if $transition{ transition: $transition };
+    }
+}

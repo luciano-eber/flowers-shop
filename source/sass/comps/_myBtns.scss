@@ -1,0 +1,61 @@
+$btns:(
+    sm: (
+        padding: .355rem 1rem,
+    ),
+    def: (
+        padding: .455rem 1.45rem,
+    ),
+    lg: (
+        padding: 1rem 2.25rem,
+    )
+);
+@mixin btnSettins($padding: false){
+    border-radius: $border-radius;
+    text-transform: uppercase;
+    border: 0;
+    font-size: 13px;
+    letter-spacing: 1px;
+    @if $padding { padding: $padding };
+}
+@each $size, $thisSize in $btns{
+    $padding: map-get($thisSize, padding);
+    @if $size == 'def'{
+        .my-btn{
+            @include btnSettins($padding);
+        }
+    } @else{
+        .my-btn-#{$size}{
+            @include btnSettins($padding);
+        }
+    }
+}
+.btn-outline-white{
+    border: 2px solid white;
+    color: white;
+}
+.btn-sale{
+    background: $yellow;
+    font-weight: bold;
+    color: white;
+    letter-spacing: .025rem;
+}
+.btn-shop{
+    background: $orange;
+    color: white;
+    text-transform: capitalize;
+    font-size: 14px;
+    i{
+        display: inline-flex;
+        margin-right: .3rem;
+        font-size: 110%;
+        letter-spacing: .025rem;
+        transform: scale(-1,1);
+        transition: transform 0.3s ease;
+    }
+    &:hover{
+        i{
+            transform: scale(1,1);
+            transition: transform 0.3s ease;
+        }
+    }
+}

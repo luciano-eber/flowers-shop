@@ -1,6 +1,6 @@
 @import '../mixins';
 
-$topbarH: 40px;
+$topbarH: 50px;
 $hoverDefault:(
     color: $yellow,
     transition: color 0.5s ease
@@ -18,6 +18,7 @@ $hoverDefault:(
 }
 .bar-mobile--title{
     font-weight: 100;
+    font-size: 120%;
     @media(min-width: map-get($grid-breakpoints, sm)){
         font-size: 150%;
     }
@@ -48,6 +49,9 @@ $hoverDefault:(
     .user-menu--search-input::placeholder{
         color: $gray-400;
     }
+    .user-menu--search-btn{
+        top: -5px;
+    }
 }
 .user-menu--search,.bar-desktop--search{
     position: relative;
@@ -62,7 +66,7 @@ $hoverDefault:(
 .user-menu--search-btn{
     background: none;
     position: absolute;
-    top: -5px;
+    top: 0px;
     color: $gray-600;
     left:10px;
     font-size: 130%;
@@ -75,6 +79,8 @@ $hoverDefault:(
     }
 }
 .top--bar-desktop{
+    height: $topbarH;
+    z-index: 999;
     .user-menu--item{
         color: $gray-600;
         font-size: 90%;
@@ -85,22 +91,79 @@ $hoverDefault:(
     }
     .bar-desktop--search-input::placeholder{
         color: $gray-400;
+        font-size: 90%;
     }
 }
+.icon-social{
+    font-size: 120%;
+    a{
+        color: $gray-400;
+        @include hoverText(
+            map-get($hoverDefault, color),
+            map-get($hoverDefault, transition)
+        );
+    }
+}
+.top--main-head{
+    top: $topbarH;
+    position: relative;
+    margin-bottom: 2rem;
+}
 .top--main-menu{
+    position: relative;
     @media(min-width: map-get($grid-breakpoints, lg)){
         width: auto;
+        padding: 0;
+    }
+    ul{
         padding: 0;
     }
 }
 .top--main-menu-item{
     font-weight: bolder;
     color: $gray-800;
-    font-size: 110%;
+    font-size: 120%;
     @include hoverText(
         map-get($hoverDefault, color),
         map-get($hoverDefault, transition)
     );
+    i{
+        font-size: 60%;
+        color: $gray-500;
+    }
+}
+.main-menu--dropdown-wrap{
+    position: absolute;
+    padding: 0;
+    left: 0;
+    visibility: hidden;
+    background-color: white;
+    box-shadow: $box-shadow-sm;
+    z-index: 998;
+    .container{
+        opacity: 0;
+        padding: 0 2rem;
+    }
+}
+.dropdown--sub-menu{
+    margin-right: 3rem;
+}
+.dropdown--sub-menu-title{
+    font-weight: bolder;
+}
+.dropdown--sub-menu-menu{
+    margin-top: .45rem;
+}
+.dropdown--sub-menu-item{
+    a{
+        font-size: 90%;
+        font-weight: 100;
+        color: $gray-500;
+        @include hoverText(
+            map-get($hoverDefault, color),
+            map-get($hoverDefault, transition)
+        );
+    }
 }
 .top--main-logo{
     img{
@@ -153,4 +216,23 @@ $searchBarTransition: width 1s ease, background 0.5s ease;
     background: none;
     width: 0px;
     transition: $searchBarTransition;
+}
+
+.main-menu-dropdown-slide-in{
+    padding: 2rem 0;
+    visibility: visible;
+    transition: padding 0.5s ease;
+    .container{
+        opacity: 1;
+        transition: opacity 0.3s linear 0.1s;
+    }
+}
+.main-menu-dropdown-slide-out{
+    padding: 0;
+    visibility: hidden;
+    transition: padding 0.5s ease, visibility 0s linear 0.25s;
+    .container{
+        opacity: 0;
+        transition: opacity 0.1s linear;
+    }
 }

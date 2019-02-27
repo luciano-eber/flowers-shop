@@ -13,13 +13,13 @@
 
         <!-- topbar mobile -->
         <div class="top--bar-mobile col-12 position-fixed shadow-sm bg-white d-md-none d-flex align-items-center justify-content-center">
-            <div class="container-fluid d-flex justify-content-between align-items-center">
+            <div class="container-fluid d-flex justify-content-between align-items-center h-100">
                 <div class="bar-mobile--corner-left d-flex align-items-center col-8">
-                    <a class="bar-mobile--open-menu mr-3" href=""><i class="fa fa-bars"></i></a>
+                    <a class="bar-mobile--open-menu mr-2 d-flex align-items-center" href=""><i class="icon-menu"></i></a>
                     <h5 class="bar-mobile--title">Flowers Store</h5>
                 </div>
-                <div class="bar-mobile--corner-right d-flex align-items-center justify-content-end col-4">
-                    <a class="bar-mobile--basket" href=""><i class="fas fa-shopping-basket"></i></a>
+                <div class="bar-mobile--corner-right d-flex align-items-center justify-content-end col-4 h-100">
+                    <a class="bar-mobile--cart h-100 d-flex align-items-center" href=""><i class="icon-shopping-cart"></i></a>
                 </div>
             </div>
         </div>
@@ -36,48 +36,144 @@
                 <div class="user-menu--search-wrap col-12 d-flex align-items-center justify-content-center">
                     <form class="user-menu--search col-sm-5">
                         <input class="form-control user-menu--search-input" type="search" placeholder="Search">
-                        <button class="btn user-menu--search-btn" type="submit"><i class="fa fa-search"></i></button>
+                        <button class="btn user-menu--search-btn" type="submit"><i class="icon-search"></i></button>
                     </form>
                 </div>
             </div>
         </div>
 
         <!-- topbar desktop -->
-        <div class="top--bar-desktop bg-light pt-2 pb-2 d-none d-md-flex">
+        <div class="top--bar-desktop bg-light d-none d-md-flex position-fixed w-100">
             <div class="container d-flex justify-content-between align-items-center">
-                <ul class="bar-desktop--user-menu d-inline-flex">
-                    <li><a class="user-menu--item mr-2" href="">My account</a></li>
-                    <li><a class="user-menu--item mr-2" href="">My wishlist</a></li>
-                    <li><a class="user-menu--item mr-2" href="">Checkout</a></li>
-                    <li><a class="user-menu--item mr-2" href="">Log in</a></li>
-                </ul>
-                <form class="bar-desktop--serch">
-                    <input class="bar-desktop--search-input form-control" type="search">
-                </form>
+                <div class="corner-left d-flex align-items-center">
+                    <ul class="bar-desktop--user-menu d-inline-flex">
+                        <li><a class="user-menu--item mr-3" href="">My account</a></li>
+                        <li><a class="user-menu--item mr-3" href="">My wishlist</a></li>
+                        <li><a class="user-menu--item mr-3" href="">Checkout</a></li>
+                        <li><a class="user-menu--item mr-3" href="">Log in</a></li>
+                    </ul>
+                    <form class="bar-desktop--search">
+                        <input class="bar-desktop--search-input form-control" type="search" placeholder="Search" id="input-search-desktop">
+                        <button class="btn btn-sm user-menu--search-btn d-flex" type="submit" id="btn-search-desktop"><i class="icon-search"></i></button>
+                    </form>
+                </div>
+                <div class="corner-right d-flex">
+                    <ul class="bar-desktop--icons-social d-flex">
+                        <li class="icon-social mr-3">
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li class="icon-social mr-3">
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li class="icon-social mr-3">
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li class="icon-social">
+                            <a href=""><i class="fab fa-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
         <!-- header main (logo etc..) -->
         <div class="top--main-head mt-5 pt-5 pb-5 mt-md-0">
-            <div class="container d-flex flex-wrap justify-content-center justify-content-md-between">
-                <img src="img/logo.png" alt="flowers store" class="mb-md-2 order-lg-0">
-                <a class="top--main-basket d-none d-md-flex order-lg-2" href=""><i class="fas fa-shopping-basket"></i></a>
-                <nav class="top--main-menu d-none d-md-flex col-12 col-lg-6 order-lg-1">
-                    <a class="top--main-menu-item mr-2" href="">Corporate</a>
-                    <a class="top--main-menu-item mr-2" href="">Love & Romance</a>
-                    <a class="top--main-menu-item mr-2" href="">Sympathy</a>
-                    <a class="top--main-menu-item" href="">New Baby</a>
+            <div class="container d-flex flex-wrap justify-content-center justify-content-md-between align-items-lg-center">
+                <div class="top--main-logo" class="mb-md-2 order-lg-0">
+                    <a href="/">
+                        <img src="img/logo.png" alt="flowers store">
+                    </a>
+                </div>
+                <a class="top--main-cart d-none d-md-flex order-lg-2 flex-md-column align-items-md-center" href="">
+                    <i class="icon-shopping-cart"></i>
+                    <span class="cart-badge empty-badge">0 Item(s)</span>
+                </a>
+                <nav class="top--main-menu d-none d-md-flex mt-md-3 col-12 col-lg-7 order-lg-1 mt-lg-0 align-items-center">
+                    <ul class="col-12 d-flex justify-content-lg-end align-items-center">
+                        <li><a class="top--main-menu-item mr-4 mr-xl-5" href="">Corporate</a></li>
+                        <li class="main-menu--dropdown-trigger">
+                            <a class="top--main-menu-item mr-4 mr-xl-5" href="">
+                                Love & Romance <i class="fa fa-chevron-down"></i>
+                            </a>
+                            <div class="main-menu--dropdown-wrap">
+                                <div class="container d-flex justify-content-around">
+                                    <div class="dropdown--sub-menu">
+                                        <span class="dropdown--sub-menu-title">
+                                            Flower Types
+                                        </span>
+                                        <ul class="dropdown--sub-menu-menu">
+                                            <li class="dropdown--sub-menu-item">
+                                                <a href="">Herbarium</a>
+                                            </li>
+                                            <li class="dropdown--sub-menu-item">
+                                                <a href="">Tulips</a>
+                                            </li>
+                                            <li class="dropdown--sub-menu-item">
+                                                <a href="">Green Roses</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown--sub-menu">
+                                        <span class="dropdown--sub-menu-title">
+                                            Kinds of flowers
+                                        </span>
+                                        <ul class="dropdown--sub-menu-menu">
+                                            <li class="dropdown--sub-menu-item">
+                                                <a href="">Lily</a>
+                                            </li>
+                                            <li class="dropdown--sub-menu-item">
+                                                <a href="">Fragrant climbers</a>
+                                            </li>
+                                            <li class="dropdown--sub-menu-item">
+                                                <a href="">Orchids</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown--sub-menu">
+                                        <span class="dropdown--sub-menu-title">
+                                            Annual plants
+                                        </span>
+                                        <ul class="dropdown--sub-menu-menu">
+                                            <li class="dropdown--sub-menu-item">
+                                                <a href="">Orchids</a>
+                                            </li>
+                                            <li class="dropdown--sub-menu-item">
+                                                <a href="">Asiatic lily</a>
+                                            </li>
+                                            <li class="dropdown--sub-menu-item">
+                                                <a href="">Modern roses</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="main-menu--dropdown-trigger"><a class="top--main-menu-item mr-4 mr-xl-5" href="">Sympathy</a>
+                        </li>
+                        <li><a class="top--main-menu-item" href="">New Baby</a></li>
+                    </ul>
+                    
+                    
+                    
+                    
                 </nav>
             </div>
         </div>
     </header>
 
     <!-- main call -->
-    <section class="main-call">
-        <div class="container d-flex flex-column align-items-start justify-content-start">
-            <h1 class="display-4">The biggest selection of fresh flowers for any occasion!</h1>
-            <h6>We work with the leading florists because this sphere is very important in our kind of activity.</h6>
-            <a class="btn" href="">More info</a>
+    <section class="main-call position-relative">
+        <div class="col-12 pl-0 pr-0 position-relative">
+            <img src="img/banner-header-2050x526.jpg" class="mw-100 img-responsive">
+        </div>
+        <div class="col-12 pl-0 pr-0 d-none d-md-flex position-absolute content">
+            <div class="container">
+                <div class="col-6 d-flex flex-column align-items-start justify-content-start ">
+                    <h1 class="main-call--cal">The biggest selection of fresh flowers for any occasion!</h1>
+                    <p class="main-call--sub">We work with the leading florists because this sphere is very important in our kind of activity.</p>
+                    <a class="my-btn btn-outline-white" href="">More info</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -96,7 +192,7 @@
                                 <img class="product--img">
                                 <legend class="product--title">
                                     Happy Birthday Kalanchoe Basket
-                                    <span class="product--badge sale">sale</span>
+                                    <span class="product--badge sale btn my-btn-sm btn-sale">sale</span>
                                 </legend>
                             </figure>
                             <div class="product--body">
@@ -105,7 +201,7 @@
                                     <span class="old">R$40.00</span>
                                 </div>
                                 <div class="product--actions">
-                                    <button class="btn">Add to basket</button>
+                                    <button class="my-btn btn-shop"><i class="icon-shopping-cart"></i>Add to cart</button>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +235,7 @@
                                     <span class="old">R$25.50</span>
                                 </div>
                                 <div class="product--actions">
-                                    <button class="btn">Add to basket</button>
+                                    <button class="btn">Add to cart</button>
                                 </div>
                             </div>
                         </div>

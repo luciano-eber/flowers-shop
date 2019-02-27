@@ -1,0 +1,35 @@
+.main-call {
+  color: white;
+  font-size: 12px; }
+  @media (min-width: 992px) {
+    .main-call {
+      font-size: 14px; } }
+  @media (min-width: 1200px) {
+    .main-call {
+      font-size: 18px; } }
+  .main-call h1, .main-call h2, .main-call p {
+    font-size: inherit; }
+  .main-call .content {
+    top: 20%; }
+    @media (min-width: 992px) {
+      .main-call .content {
+        top: 10%; } }
+  .main-call .main-call--cal {
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 150%;
+    margin-bottom: .35rem; }
+  .main-call .main-call--sub {
+    font-size: 90%; }
+    @media (min-width: 1200px) {
+      .main-call .main-call--sub {
+        font-size: 80%; } }
+  .main-call .btn {
+    font-size: 100%;
+    text-transform: uppercase; }
+    @media (min-width: 992px) {
+      .main-call .btn {
+        font-size: 85%; } }
+    @media (min-width: 1200px) {
+      .main-call .btn {
+        font-size: 70%; } }
