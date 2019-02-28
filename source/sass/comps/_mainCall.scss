@@ -1,0 +1,41 @@
+.main-call{
+    color: white;
+    font-size: 12px;
+    @media(min-width: map-get($grid-breakpoints,lg)){
+        font-size: 14px;
+    }
+    @media(min-width: map-get($grid-breakpoints,xl)){
+        font-size: 18px;
+    }
+    h1,h2,p{
+        font-size: inherit;
+    }
+    .content{
+        top: 20%;
+        @media(min-width: map-get($grid-breakpoints,lg)){
+            top: 10%;
+        }
+    }
+    .main-call--cal{
+        text-transform: uppercase;
+        font-weight: 100;
+        font-size: 150%;
+        margin-bottom: .35rem;
+    }
+    .main-call--sub{
+        font-size: 90%;
+        @media(min-width: map-get($grid-breakpoints,xl)){
+            font-size: 80%;
+        }
+    }
+    .btn{
+        font-size: 100%;
+        text-transform: uppercase;
+        @media(min-width: map-get($grid-breakpoints,lg)){
+            font-size: 85%;
+        }
+        @media(min-width: map-get($grid-breakpoints,xl)){
+            font-size: 70%;
+        }
+    }
+}

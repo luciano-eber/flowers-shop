@@ -1,0 +1,16 @@
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+@import 'reset';
+@import 'comps/buyshop';
+@import 'comps/topbar';
+@import 'comps/myBtns';
+@import 'comps/types';
+@import 'comps/product';
+body{
+    font-size: 16px;
+    font-family: "Open Sans",sans-serif;
+}
+
+

@@ -1,0 +1,238 @@
+@import '../mixins';
+
+$topbarH: 50px;
+$hoverDefault:(
+    color: $yellow,
+    transition: color 0.5s ease
+);
+
+.top--bar-mobile{
+    z-index: 999;
+    height: $topbarH;
+    *{
+        color: black;
+    }
+}
+.bar-mobile--open-menu,.bar-mobile--cart{
+    font-size: 150%;
+}
+.bar-mobile--title{
+    font-weight: 100;
+    font-size: 120%;
+    @media(min-width: map-get($grid-breakpoints, sm)){
+        font-size: 150%;
+    }
+}
+.bar-mobile--cart{
+    position: relative;
+    height: 100%;
+    color: $gray-600;
+    &:after{
+        @include pseudoBlock;
+        height: 100%;
+        width: 1px;
+        background: $gray-300;
+        top: 0;
+        left: -20px;
+    }
+}
+.top--user-menu-mobile{
+    position: relative;
+    top: $topbarH;
+    color: $gray-300;
+    .user-menu--item{
+        color: $gray-600;
+    }
+    .user-menu--search-input{
+        padding-left: 2.2rem;
+    }
+    .user-menu--search-input::placeholder{
+        color: $gray-400;
+    }
+    .user-menu--search-btn{
+        top: -5px;
+    }
+}
+.user-menu--search,.bar-desktop--search{
+    position: relative;
+}
+.bar-desktop--search-input{
+    padding-left: 2.5rem;
+    @media(min-width: map-get($grid-breakpoints, md)){
+        width: 0px;
+        background: none;
+    }
+}
+.user-menu--search-btn{
+    background: none;
+    position: absolute;
+    top: 0px;
+    color: $gray-600;
+    left:10px;
+    font-size: 130%;
+    @include hoverText(
+        map-get($hoverDefault, color),
+        map-get($hoverDefault, transition)
+    );
+    @media(min-width: map-get($grid-breakpoints, md)){
+        left: 0px;
+    }
+}
+.top--bar-desktop{
+    height: $topbarH;
+    z-index: 999;
+    .user-menu--item{
+        color: $gray-600;
+        font-size: 90%;
+        @include hoverText(
+            map-get($hoverDefault, color),
+            map-get($hoverDefault, transition)
+        );
+    }
+    .bar-desktop--search-input::placeholder{
+        color: $gray-400;
+        font-size: 90%;
+    }
+}
+.icon-social{
+    font-size: 120%;
+    a{
+        color: $gray-500;
+        @include hoverText(
+            map-get($hoverDefault, color),
+            map-get($hoverDefault, transition)
+        );
+    }
+}
+.top--main-head{
+    top: $topbarH;
+    position: relative;
+    margin-bottom: 2rem;
+}
+.top--main-menu{
+    position: relative;
+    @media(min-width: map-get($grid-breakpoints, lg)){
+        width: auto;
+        padding: 0;
+    }
+    ul{
+        padding: 0;
+    }
+}
+.top--main-menu-item{
+    font-weight: bolder;
+    color: $gray-800;
+    font-size: 120%;
+    @include hoverText(
+        map-get($hoverDefault, color),
+        map-get($hoverDefault, transition)
+    );
+    i{
+        font-size: 60%;
+        color: $gray-500;
+    }
+}
+.main-menu--dropdown-wrap{
+    position: absolute;
+    padding: 0;
+    left: 0;
+    visibility: hidden;
+    background-color: white;
+    box-shadow: $box-shadow-sm;
+    z-index: 998;
+    .container{
+        opacity: 0;
+        padding: 0 1rem;
+    }
+}
+.dropdown--sub-menu{
+    margin-right: 3rem;
+}
+.dropdown--sub-menu-title{
+    font-weight: bolder;
+}
+.dropdown--sub-menu-menu{
+    margin-top: .45rem;
+}
+.dropdown--sub-menu-item{
+    a{
+        font-size: 90%;
+        font-weight: 100;
+        color: $gray-500;
+        @include hoverText(
+            map-get($hoverDefault, color),
+            map-get($hoverDefault, transition)
+        );
+    }
+}
+.top--main-logo{
+    img{
+        max-width: 300px;
+    }
+}
+.top--main-cart{
+    position: relative;
+    i{
+        font-size: 350%;
+        color: $gray-600;
+        @include hoverText(
+            map-get($hoverDefault, color),
+            map-get($hoverDefault, transition)
+        );
+    }
+}
+.cart-badge{
+    position: absolute;
+    top: 0px;
+    display: block;
+    background: #f3c881;
+    font-size: 70%;
+    font-weight: 100;
+    padding: .45rem;
+    color: #ce9027;
+    border-radius: 50%;
+    line-height: .75rem;
+    text-align: center;
+}
+.empty-badge{
+    &::after{
+        @include pseudoBlock();
+        left: 3px;
+        bottom: -17px;
+        border: 9px solid transparent;
+        border-top: 12px solid #f3c881; 
+    }
+
+}
+
+//javascript class
+$searchBarTransition: width 1s ease, background 0.5s ease;
+.search-bar-slide-in{
+    background: white;
+    width: 190px;
+    transition: $searchBarTransition;
+}
+.search-bar-slide-out{
+    background: none;
+    width: 0px;
+    transition: $searchBarTransition;
+}
+
+.main-menu-dropdown-slide-in{
+    padding: 2rem 0;
+    visibility: visible;
+    transition: padding 0.5s ease;
+    .container{
+        opacity: 1;
+        transition: opacity 0.3s linear 0.1s;
+    }
+}
+.main-menu-dropdown-slide-out{
+    padding: 0;
+    visibility: hidden;
+    transition: padding 0.5s ease, visibility 0s linear 0.25s;
+    .container{
+        opacity: 0;
+        transition: opacity 0.1s linear;
+    }
+}
