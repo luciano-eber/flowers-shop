@@ -1,9 +1,15 @@
 import 'bootstrap';
 import Swiper from 'swiper';
-import {effects} from './../comps/effects';
-import {Panel} from './../comps/panels';
-import {products} from './../data/products';
+import { effects } from './../comps/effects';
+import { Panel } from './../comps/panels';
+import { products } from './../data/products';
+import { linksArray } from './../data/links';
+import { dataController } from './../comps/dataCtrl';
 
+dataController.footerMenu({
+    menus: linksArray,
+    wrap: '.footer .footer-menu',
+})
 effects.searchHoverDesktop({
     formSearch: '.bar-desktop--search',
     inputSearch: '#input-search-desktop',
