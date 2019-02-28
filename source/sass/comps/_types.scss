@@ -1,0 +1,39 @@
+@mixin pseudoSections{
+    width: 70px;
+    height: 1px;
+    background: $gray-300;
+}
+.section--head{
+    margin-top: 2rem;
+    @include flex(center,center);
+}
+.section--title{
+    $direction: 140%;
+    font-weight: 100;
+    font-size: 160%;
+    position: relative;
+    @include inlineFlex(center,center);
+    &:after{
+        @include pseudoBlock;
+        @include pseudoSections;
+        left: $direction;
+    }
+    &:before{
+        @include pseudoBlock;
+        @include pseudoSections;
+        right: $direction;
+    }
+    @media(min-width: map-get($grid-breakpoints, xl)){
+        font-size: 200%;
+    }
+    @media(min-width: 1600px){
+        font-size: 240%;
+    }
+}
+.swiper-button-next, .swiper-button-prev{
+    i{
+        font-size: 250%;
+        color: $gray-400;
+        @include hoverText($color: $yellow, $transition: color 0.8s ease)
+    }
+}

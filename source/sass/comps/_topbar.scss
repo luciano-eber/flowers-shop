@@ -97,7 +97,7 @@ $hoverDefault:(
 .icon-social{
     font-size: 120%;
     a{
-        color: $gray-400;
+        color: $gray-500;
         @include hoverText(
             map-get($hoverDefault, color),
             map-get($hoverDefault, transition)

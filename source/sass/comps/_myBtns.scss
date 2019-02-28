@@ -1,12 +1,12 @@
 $btns:(
     sm: (
-        padding: .355rem 1rem,
+        padding: 5px 10px,
     ),
     def: (
-        padding: .455rem 1.45rem,
+        padding: 10px 20px,
     ),
     lg: (
-        padding: 1rem 2.25rem,
+        padding: 15px 25px,
     )
 );
 @mixin btnSettins($padding: false){
@@ -33,17 +33,25 @@ $btns:(
     border: 2px solid white;
     color: white;
 }
-.btn-sale{
-    background: $yellow;
+@mixin btnBadge{
     font-weight: bold;
     color: white;
-    letter-spacing: .025rem;
+    letter-spacing: 0.055rem;
+}
+.btn-sale{
+    background: $yellow;
+    @include btnBadge;
+}
+.btn-new{
+    background: $green;
+    @include btnBadge;
 }
 .btn-shop{
-    background: $orange;
+    background: $red;
     color: white;
     text-transform: capitalize;
     font-size: 14px;
+    letter-spacing: 0rem;
     i{
         display: inline-flex;
         margin-right: .3rem;
@@ -53,6 +61,8 @@ $btns:(
         transition: transform 0.3s ease;
     }
     &:hover{
+        background: $yellow;
+        transition: background 0.3s ease;
         i{
             transform: scale(1,1);
             transition: transform 0.3s ease;
