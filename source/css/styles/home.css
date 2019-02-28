@@ -658,7 +658,7 @@ button.swiper-pagination-bullet {
     height: 1px;
     background: #f2f4f5;
     position: absolute;
-    bottom: -3rem; }
+    bottom: -2rem; }
 
 .footer-icons-ul li a {
   border-radius: 50%;
@@ -670,6 +670,12 @@ button.swiper-pagination-bullet {
   display: flex;
   align-items: center;
   justify-content: center; }
+
+.footer-credits {
+  font-size: 80%;
+  color: #adb5bd; }
+  .footer-credits .high {
+    color: #6c757d; }
 
 .slide-show {
   height: 300px; }

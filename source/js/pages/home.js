@@ -76,3 +76,7 @@ let slideShowHome = new Swiper('.slide-show .swiper-container', {
     },
     effect: 'fade',
 })
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })

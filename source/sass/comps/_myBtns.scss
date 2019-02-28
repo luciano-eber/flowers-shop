@@ -33,6 +33,47 @@ $btns:(
     border: 2px solid white;
     color: white;
 }
+.btn-hover{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    $timer: 0.3s;
+    $transitonText: transform $timer ease;
+    transition: border $timer ease;
+    .default{
+       opacity: 0;
+    }
+    .btn-out,.btn-over{
+        position: absolute;
+    }
+    .btn-out{
+        top: 0;
+        left: 0;
+        transform: translateY(0px);
+        transition: $transitonText;
+    }
+    .btn-over{
+        left: 0;
+        transform: translateY(60px);
+        transition: $transitonText;
+    }
+    &:hover{
+        background: $yellow;
+        border: 2px solid rgba(250,250,250,0);
+        transition: background $timer ease, border $timer ease;
+
+        .btn-over{
+            transform: translateY(-10px);
+            transition: $transitonText;
+        }
+        .btn-out{
+            transform: translateY(-60px);
+            transition: $transitonText;
+        }
+    }
+    
+}
 @mixin btnBadge{
     font-weight: bold;
     color: white;
@@ -68,4 +109,19 @@ $btns:(
             transition: transform 0.3s ease;
         }
     }
+}
+@mixin hoverIcons($background){
+    &:hover{
+        background: $background;
+        transition: background 0.3s ease;
+    }
+}
+.facebook-hover{
+    @include hoverIcons(#29487d);
+}
+.twitter-hover{
+    @include hoverIcons(#1da1f2);
+}
+.insta-hover{
+    @include hoverIcons(brown);
 }
