@@ -1,0 +1,24 @@
+@import '../mixins';
+.footer-menu{
+    position: relative;
+    &:after{
+        @include pseudoBlock;
+        width: 100%;
+        height: 1px;
+        background: $gray-100;
+        position: absolute;
+        bottom: -3rem;
+    }
+}
+.footer-icons-ul{
+    li a{
+        border-radius: 50%;
+        background: #dce1e2;
+        color: white;
+        $w: 28px;
+        width: $w;
+        height: $w;
+        font-size: 80%;
+        @include flex(center,center);
+    }
+}
