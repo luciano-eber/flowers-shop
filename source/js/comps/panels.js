@@ -32,13 +32,13 @@ export class Panel{
             <legend class="product--title">
                 ${data.title}
             </legend>
-            <span class="product--badge sale btn my-btn-sm btn-sale">sale</span>
+            <span class="product--badge sale my-btn-sm btn-sale">sale</span>
         `; 
         if(data.new && !data.sale) legend = `
             <legend class="product--title">
                 ${data.title}
             </legend>
-            <span class="product--badge sale btn my-btn-sm btn-new position-absolute">New</span>
+            <span class="product--badge sale my-btn-sm btn-new position-absolute">New</span>
         `;
         if(!data.sale && !data.new) legend = `
             <legend class="product--title">${data.title}</legend>
